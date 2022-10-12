@@ -1,0 +1,6 @@
+name: CityBuild
+version: '${project.version}'
+author: GalacticProjects
+main: net.galacticprojects.spigot.CityBuild
+
+commands:
