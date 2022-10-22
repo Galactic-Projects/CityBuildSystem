@@ -7,11 +7,11 @@ public class CityBuild extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        super.onEnable();
+
     }
 
     @Override
     public void onDisable() {
-        super.onDisable();
+
     }
 }
