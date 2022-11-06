@@ -1,6 +1,6 @@
 package net.galacticprojects.spigot.util;
 
-import net.galacticprojects.lobbysystem.util.color.ColorParser;
+import net.galacticprojects.spigot.util.color.ColorParser;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;

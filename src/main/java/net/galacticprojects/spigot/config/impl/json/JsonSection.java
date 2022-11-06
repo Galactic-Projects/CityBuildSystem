@@ -3,9 +3,9 @@ package net.galacticprojects.spigot.config.impl.json;
 import com.syntaxphoenix.syntaxapi.json.JsonObject;
 import com.syntaxphoenix.syntaxapi.json.JsonValue;
 import com.syntaxphoenix.syntaxapi.json.ValueType;
-import net.galacticprojects.lobbysystem.config.impl.AbstractSection;
-import net.galacticprojects.lobbysystem.config.impl.ConfigHelper;
-import net.galacticprojects.lobbysystem.config.impl.ISectionList;
+import net.galacticprojects.spigot.config.impl.AbstractSection;
+import net.galacticprojects.spigot.config.impl.ConfigHelper;
+import net.galacticprojects.spigot.config.impl.ISectionList;
 
 import java.util.Arrays;
 import java.util.Collection;

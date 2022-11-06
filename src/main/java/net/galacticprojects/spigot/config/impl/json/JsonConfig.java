@@ -5,10 +5,10 @@ import com.syntaxphoenix.syntaxapi.json.JsonValue;
 import com.syntaxphoenix.syntaxapi.json.ValueType;
 import com.syntaxphoenix.syntaxapi.json.io.JsonParser;
 import com.syntaxphoenix.syntaxapi.json.io.JsonWriter;
-import net.galacticprojects.lobbysystem.config.impl.AbstractSection;
-import net.galacticprojects.lobbysystem.config.impl.ConfigHelper;
-import net.galacticprojects.lobbysystem.config.impl.IConfiguration;
-import net.galacticprojects.lobbysystem.config.impl.ISectionList;
+import net.galacticprojects.spigot.config.impl.AbstractSection;
+import net.galacticprojects.spigot.config.impl.ConfigHelper;
+import net.galacticprojects.spigot.config.impl.IConfiguration;
+import net.galacticprojects.spigot.config.impl.ISectionList;
 
 import java.io.File;
 import java.util.Arrays;

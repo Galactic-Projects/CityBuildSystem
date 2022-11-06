@@ -4,8 +4,8 @@ import com.syntaxphoenix.syntaxapi.json.JsonArray;
 import com.syntaxphoenix.syntaxapi.json.JsonObject;
 import com.syntaxphoenix.syntaxapi.json.JsonValue;
 import com.syntaxphoenix.syntaxapi.json.ValueType;
-import net.galacticprojects.lobbysystem.config.impl.AbstractSection;
-import net.galacticprojects.lobbysystem.config.impl.AbstractSectionList;
+import net.galacticprojects.spigot.config.impl.AbstractSection;
+import net.galacticprojects.spigot.config.impl.AbstractSectionList;
 
 import java.util.List;
 

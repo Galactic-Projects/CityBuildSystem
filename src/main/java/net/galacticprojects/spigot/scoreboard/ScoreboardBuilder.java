@@ -1,7 +1,7 @@
 package net.galacticprojects.spigot.scoreboard;
 
-import net.galacticprojects.lobbysystem.LobbySystem;
-import net.galacticprojects.lobbysystem.util.BukkitColor;
+import net.galacticprojects.spigot.CityBuild;
+import net.galacticprojects.spigot.util.BukkitColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -15,9 +15,9 @@ public abstract class ScoreboardBuilder {
     protected final Objective objective;
 
     protected final Player player;
-    protected final LobbySystem system;
+    protected final CityBuild system;
 
-    public ScoreboardBuilder(Player player, LobbySystem system, String displayName) {
+    public ScoreboardBuilder(Player player, CityBuild system, String displayName) {
         this.player = player;
         this.system = system;
 

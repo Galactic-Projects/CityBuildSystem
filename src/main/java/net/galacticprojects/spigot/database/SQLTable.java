@@ -2,7 +2,7 @@ package net.galacticprojects.spigot.database;
 
 public enum SQLTable {
 
-    CityBuild("CityBuild")
+    CityBuild("CityBuild"), PLAYER_TABLE("Player"), SYNC_TABLE("Sync"), BOOST_TABLE("Boost");
     ;
 
     private final String defaultTableName;

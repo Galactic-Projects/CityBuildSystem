@@ -5,7 +5,7 @@ import me.lauriichan.laylib.command.Node;
 import me.lauriichan.laylib.command.NodeCommand;
 import me.lauriichan.laylib.command.util.Triple;
 import me.lauriichan.laylib.localization.MessageManager;
-import net.galacticprojects.lobbysystem.LobbySystem;
+import net.galacticprojects.spigot.CityBuild;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,9 +19,9 @@ public final class BukkitCommandBridge implements CommandExecutor, TabCompleter 
     private final CommandManager commandManager;
     private final MessageManager messageManager;
     private final String prefix;
-    private LobbySystem system;
+    private CityBuild system;
 
-    public BukkitCommandBridge(final CommandManager commandManager, LobbySystem system, final MessageManager messageManager, final String prefix) {
+    public BukkitCommandBridge(final CommandManager commandManager, CityBuild system, final MessageManager messageManager, final String prefix) {
         this.commandManager = commandManager;
         this.messageManager = messageManager;
         this.prefix = prefix + ':';

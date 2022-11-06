@@ -1,6 +1,6 @@
 package net.galacticprojects.spigot.util.source;
 
-import net.galacticprojects.lobbysystem.util.Ref;
+import net.galacticprojects.spigot.util.Ref;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.file.PathUtils;
 
@@ -144,6 +144,7 @@ public final class Resources {
     /*
      * Source Builder
      */
+
 
     public URLSource url(String url) throws MalformedURLException {
         return url(new URL(url));

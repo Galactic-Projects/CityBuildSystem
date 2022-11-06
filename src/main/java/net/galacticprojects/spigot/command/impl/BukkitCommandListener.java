@@ -4,7 +4,7 @@ import me.lauriichan.laylib.command.Actor;
 import me.lauriichan.laylib.command.CommandManager;
 import me.lauriichan.laylib.command.CommandProcess;
 import me.lauriichan.laylib.localization.MessageManager;
-import net.galacticprojects.lobbysystem.LobbySystem;
+import net.galacticprojects.spigot.CityBuild;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,9 +22,9 @@ public final class BukkitCommandListener implements Listener {
 
     private final CommandManager commandManager;
     private final MessageManager messageManager;
-    LobbySystem system;
+    CityBuild system;
 
-    public BukkitCommandListener(final CommandManager commandManager, LobbySystem system, final MessageManager messageManager) {
+    public BukkitCommandListener(final CommandManager commandManager, CityBuild system, final MessageManager messageManager) {
         this.commandManager = commandManager;
         this.messageManager = messageManager;
         this.system = system;

@@ -6,12 +6,13 @@ import me.lauriichan.laylib.command.Actor;
 import me.lauriichan.laylib.localization.Key;
 import me.lauriichan.laylib.localization.MessageManager;
 import me.lauriichan.laylib.localization.MessageProvider;
-import net.galacticprojects.lobbysystem.LobbySystem;
-import net.galacticprojects.lobbysystem.command.impl.version.NbtProvider;
-import net.galacticprojects.lobbysystem.database.SQLDatabase;
-import net.galacticprojects.lobbysystem.database.model.LobbyPlayer;
-import net.galacticprojects.lobbysystem.util.ComponentParser;
-import net.galacticprojects.lobbysystem.util.color.ComponentColor;
+import net.galacticprojects.spigot.CityBuild;
+import net.galacticprojects.spigot.command.impl.version.NbtProvider;
+import net.galacticprojects.spigot.database.SQLDatabase;
+import net.galacticprojects.spigot.database.model.LobbyPlayer;
+import net.galacticprojects.spigot.util.ComponentParser;
+import net.galacticprojects.spigot.util.color.ComponentColor;
+import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.ItemTag;
@@ -19,16 +20,17 @@ import net.md_5.bungee.api.chat.hover.content.Item;
 import net.md_5.bungee.api.chat.hover.content.Text;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.UUID;
 
 public class BukkitActor<P extends CommandSender> extends Actor<P> {
 
-    private final LobbySystem system;
+    private final CityBuild system;
     private String language;
 
-    public BukkitActor(final P handle, final LobbySystem system, final MessageManager messageManager) {
+    public BukkitActor(final P handle, final CityBuild system, final MessageManager messageManager) {
         super(handle, messageManager);
         this.system = system;
     }
@@ -64,7 +66,7 @@ public class BukkitActor<P extends CommandSender> extends Actor<P> {
         if(database == null) {
             return super.getLanguage();
         }
-        LobbyPlayer player = database.getPlayer(getId()).join();
+        LobbyPlayer player = database.getLobbyPlayer(getId()).join();
         if(player == null) {
             return language = super.getLanguage();
         }
@@ -74,18 +76,23 @@ public class BukkitActor<P extends CommandSender> extends Actor<P> {
     public void setLanguage(String language) {
         this.language = language;
         system.getSqlConfiguration().getDatabaseRef().asOptional().ifPresent(sql -> {
-            sql.getPlayer(getId()).thenAccept(player -> {
+            sql.getLobbyPlayer(getId()).thenAccept(player -> {
                 if(player == null){
                     return;
                 }
                 player.setLanguage(language);
-                sql.updatePlayer(player);
+                sql.updateLobbyPlayer(player);
             });
         });
     }
 
     @Override
     public void sendMessage(String message) {
+        if(this.as(Player.class) != null) {
+            Player player = as(Player.class).getHandle();
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, ComponentParser.parse(ComponentColor.apply(message)));
+            return;
+        }
         handle.sendMessage(ComponentColor.apply(message));
     }
 

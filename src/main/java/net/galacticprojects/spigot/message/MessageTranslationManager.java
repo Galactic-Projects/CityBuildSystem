@@ -8,7 +8,7 @@ import me.lauriichan.laylib.command.Actor;
 import me.lauriichan.laylib.localization.MessageManager;
 import me.lauriichan.laylib.localization.MessageProvider;
 import me.lauriichan.laylib.logger.ISimpleLogger;
-import net.galacticprojects.lobbysystem.config.impl.json.JsonConfig;
+import net.galacticprojects.spigot.config.impl.json.JsonConfig;
 
 import java.io.File;
 import java.io.FilenameFilter;

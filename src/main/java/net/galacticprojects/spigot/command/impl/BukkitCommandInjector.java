@@ -7,8 +7,8 @@ import me.lauriichan.laylib.command.NodeCommand;
 import me.lauriichan.laylib.localization.MessageManager;
 import me.lauriichan.laylib.reflection.ClassUtil;
 import me.lauriichan.laylib.reflection.JavaAccess;
-import net.galacticprojects.lobbysystem.LobbySystem;
-import net.galacticprojects.lobbysystem.command.impl.version.VersionConstant;
+import net.galacticprojects.spigot.CityBuild;
+import net.galacticprojects.spigot.command.impl.version.VersionConstant;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.command.SimpleCommandMap;
@@ -35,7 +35,7 @@ public final class BukkitCommandInjector implements ICommandInjector {
 
     private final String prefix;
 
-    public BukkitCommandInjector(final CommandManager commandManager, LobbySystem system, final MessageManager messageManager, final Plugin plugin) {
+    public BukkitCommandInjector(final CommandManager commandManager, CityBuild system, final MessageManager messageManager, final Plugin plugin) {
         this.plugin = plugin;
         this.prefix = plugin.getName().toLowerCase(Locale.ROOT);
         this.bridge = new BukkitCommandBridge(commandManager, system, messageManager, prefix);

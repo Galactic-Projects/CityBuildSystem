@@ -1,7 +1,7 @@
 package net.galacticprojects.spigot.config;
 
 import me.lauriichan.laylib.logger.ISimpleLogger;
-import net.galacticprojects.lobbysystem.config.impl.json.JsonConfig;
+import net.galacticprojects.spigot.config.impl.json.JsonConfig;
 
 import java.io.File;
 
